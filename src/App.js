@@ -2,6 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import React from 'react';
 import Tooltip from 'react-bootstrap/Tooltip'
@@ -25,40 +26,33 @@ export default function App() {
   return (<Tooltip>{tt}</Tooltip>)
         } 
   return (
-    <div style={{ display: 'block', width: 700, padding: 30 }}>
+    <Card className="border border-secondary text-center" style={{ display: 'block', padding: 30 }}>
       <OverlayTrigger
         delay={{ hide: 450, show: 300 }}
         overlay={renderTT(1)}
-        placement="right">
-          <header style={{fontWeight: 'bold'}}>Demo Tooltips</header>
+        placement="top">
+          <h4 style={{fontWeight: 'bold', fontSize: "30"}}>Demo Tooltips</h4>
       </OverlayTrigger>
       <img src={logo} className="App-logo" alt="logo" />
+      <Card>
       <OverlayTrigger
         delay={{ hide: 450, show: 300 }}
         overlay={renderTT(2)}
-        placement="right">
-        <p>
+        placement="top">
+        <Card>
           Edit <code>src/App.js</code> and save to reload.
-        </p>
+        </Card>
       </OverlayTrigger>
-        
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      </Card>
 
-      <h4>React-Bootstrap Tooltip Component</h4>
+      <p>React-Bootstrap Tooltip Component</p>
       <OverlayTrigger
         delay={{ hide: 450, show: 300 }}
         overlay={renderTT(3)}
         placement="bottom"
       ><Button variant="warning">Tooltip Button</Button>
       </OverlayTrigger>,
-    </div>
+    </Card>
   );
 }
 
